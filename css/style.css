@@ -26,14 +26,14 @@
 }
 
 #div-jogo {
-    width: 600px;
+    width: 1000px;
     height: 600px;
     margin: 10px auto;
     display: flex;
 }
 
 canvas {
-    background-color: black;
+    background-color: green;
 }
 
 #regras {
@@ -44,9 +44,15 @@ canvas {
     justify-content:space-between;
 }
 
-#regras > div > h1 {
+#j1 {
     font-family: Helvetica;
     color: #58207e;
+    margin:  10px;
+}
+
+#j2 {
+    font-family: Helvetica;
+    color: #d40b46;
     margin:  10px;
 }
 

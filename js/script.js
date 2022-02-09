@@ -20,7 +20,7 @@ let jogadorEsquerda = {
     velocidade: 10
 }
 let jogadorDireita = {
-    x: 560,
+    x: 960,
     y: jogo.height / 2 - 60,
     altura: 120,
     largura: 30,
@@ -55,7 +55,7 @@ function moveBloco() {
 function moveBola() {
     if (bola.x <= 0) {
         novoJogo("Jogador 2")
-    } else if (bola.x + bola.largura >= jogo.height) {
+    } else if (bola.x + bola.largura >= jogo.width) {
         novoJogo("Jogador 1")
     }
 
@@ -106,17 +106,32 @@ function desenha() {
     moveBloco()
 
     moveBola()
-
-    contexto.fillStyle = "white"
+    
+    contexto.fillStyle = "#58207e"
 
     contexto.fillRect(jogadorEsquerda.x, jogadorEsquerda.y, jogadorEsquerda.largura, jogadorEsquerda.altura)
+    
+    contexto.fillStyle = "#d40b46"
+
     contexto.fillRect(jogadorDireita.x, jogadorDireita.y, jogadorDireita.largura, jogadorDireita.altura)
+    
+    contexto.fillStyle = "white"
+
+    contexto.fillRect(jogo.width / 2, 0, 1, jogo.height)
+
     contexto.fillRect(bola.x, bola.y, bola.largura, bola.altura)
 
-    contexto.font = "20px Arial"
+    contexto.font = "40px Arial"
 
-    contexto.fillText("Jogador 1: " + jogadorEsquerda.pontos, 50, 20)
-    contexto.fillText("Jogador 2: " + jogadorDireita.pontos, jogo.height - 170, 20)
+    contexto.fillStyle = "#58207e"
+
+    contexto.fillText(jogadorEsquerda.pontos, jogo.width / 2 - 40, 40)
+    
+    contexto.fillStyle = "#d40b46"
+
+    contexto.fillText(jogadorDireita.pontos, jogo.width / 2 + 19, 40)
+    
+    contexto.fillStyle = "white"
 }
 
 function reiniciar() {
